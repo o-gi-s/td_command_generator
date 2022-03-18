@@ -1,5 +1,5 @@
 {
-  "name": "TD command generator",
+  "name": "td_command_generator",
   "version": "v1.0.0",
   "author": "o-gi-s",
   "dependencies": {
