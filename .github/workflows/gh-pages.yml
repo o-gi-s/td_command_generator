@@ -1,0 +1,31 @@
+name: NEXT
+
+on: push
+
+jobs:
+  gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js for npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Checkout branch
+        run: git checkout master
+
+      - name: Run npm
+        run: | 
+          npm ci
+          npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
