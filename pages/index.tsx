@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Box, Button } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 import { TextFieldTd } from "../components/atoms/TextFieldTd";
+import packageJson from "../package.json";
 
 export default function Home() {
 
@@ -29,6 +30,7 @@ export default function Home() {
         <Typography variant="h5">
           TD command generator
         </Typography>
+        <Typography variant="subtitle1">{ packageJson.version }</Typography>
         <Box mb="30px" />
         <Typography variant="caption">
           gitでタグを一気に消したいときに。<br />
